@@ -5,25 +5,27 @@ channels:
 
 dependencies:
   # Python itself
-  - python=3.11
-
-  # for building and testing the JupyterBook
-  - jupyter-book
-  - ghp-import
-  - nbconvert
-  - ipympl
+  - python=3.13
 
   # JupyterLab interface
   - jupyterlab
+  - ipympl
+  - ipywidgets
+  - nbconvert
 
   # core scientific Python libraries
   - numpy
   - pandas
   - matplotlib
+  - scipy
   - scikit-learn
   - h5py
   - pyarrow
   - pympler
+  - requests
+  - aiohttp
+  - fsspec
+  - pint
 
   # libraries for particle physics
   - uproot
@@ -34,7 +36,6 @@ dependencies:
   - particle
 
   # compilers
-  - clang-tools
   - cxx-compiler
   - pybind11
   - numba

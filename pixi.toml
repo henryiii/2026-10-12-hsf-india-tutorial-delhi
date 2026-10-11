@@ -1,0 +1,45 @@
+[workspace]
+channels = ["conda-forge"]
+name = "2026-10-12-hsf-india-tutorial-delhi"
+platforms = ["linux-64", "linux-aarch64", "osx-arm64", "win-64"]
+
+[tasks]
+graphviz-config = "dot -c"
+lab = { cmd = "jupyter lab", depends-on = ["graphviz-config"] }
+start = { depends-on = ["lab"] }
+
+[dependencies]
+python = ">=3.13,<3.15"
+jupyterlab = ">=4.4"
+ipympl = "*"
+ipywidgets = "*"
+nbconvert = "*"
+numpy = ">=2"
+pandas = ">=2"
+matplotlib = ">=3.10"
+scikit-learn = "*"
+h5py = "*"
+pyarrow = "*"
+pympler = "*"
+requests = "*"
+aiohttp = "*"
+fsspec = "*"
+pint = "*"
+scipy = "*"
+uproot = ">=5"
+awkward = ">=2.8"
+vector = ">=1.6"
+hist = ">=2.8"
+hepunits = "*"
+particle = "*"
+cxx-compiler = "*"
+pybind11 = "*"
+numba = ">=0.61"
+dask = "*"
+distributed = "*"
+dask-awkward = "*"
+graphviz = "*"
+python-graphviz = "*"
+
+[pypi-dependencies]
+jax = ">=0.6"

@@ -1,8 +1,22 @@
-# 2024-05-22-hsf-india-tutorial-delhi
+# 2026-10-12-hsf-india-tutorial-delhi
 
-After [starting a JupyterHub with no GPU](https://binderhub.ssl-hep.org/v2/gh/research-software-collaborations/courses-hsf-india-june2025/lite),
+Python, array-oriented programming, ragged arrays, and scaling: a four-lesson tutorial for the HSF-India school in Delhi, October 2026.
 
-<br>
+Each of the 4 lessons has
+
+* `lecture-slides.ipynb`: what the instructor presents
+* `lecture-workbook.ipynb`: what you run to follow along
+* one or two projects with solutions: open the project when the lecture is done, and do not peek at the solutions until you are done.
+
+Lesson 1 only has a physics problem. Lessons 2, 3, and 4 each have a physics problem (Higgs hunting) and a non-physics problem. Choose the one that interests you!
+
+Lesson 3 project 1 streams a 611 MB Parquet file from Zenodo, one row group at a time. The other notebooks only use the files in `data/`.
+
+## Option 1: JupyterHub (no installation)
+
+Start a JupyterHub session with no GPU:
+
+<https://binderhub.ssl-hep.org/v2/gh/research-software-collaborations/courses-hsf-india-june2025/lite>
 
 <p align="center"><img src="https://github.com/jpivarski-talks/2024-05-22-hsf-india-tutorial-delhi/assets/1852447/9f57768b-7d3d-4b74-8364-c066fe352c39" width="75%"></p>
 
@@ -13,29 +27,36 @@ Bring up a terminal by pressing the "Terminal" button:
 In that terminal, clone this repository with
 
 ```bash
-git clone https://github.com/maxgalli/2025-06-15-hsf-india-tutorial-bangalore.git
+git clone https://github.com/henryiii/2026-10-12-hsf-india-tutorial-delhi.git
 ```
 
 <p align="center"><img src="https://github.com/jpivarski-talks/2024-05-22-hsf-india-tutorial-delhi/assets/1852447/89b5625b-c1db-44f7-8ce7-774ed592580e" width="75%"></p>
 
-Now there's a `2025-06-15-hsf-india-tutorial-bangalore` directory that you can double-click.
+Now there is a `2026-10-12-hsf-india-tutorial-delhi` directory that you can double-click.
 
 <p align="center"><img src="https://github.com/jpivarski-talks/2024-05-22-hsf-india-tutorial-delhi/assets/1852447/32497618-3df3-4718-b643-fa38d05d56fb" width="75%"></p>
 
-Each of the 4 lessons has
-
-* `lecture-slides.ipynb`: what I'll present
-* `lecture-workbook.ipynb`: what you should run to follow what I'm doing
-* one or two projects with solutions: open the project when we're done with the lecture and don't peek at the solutions until you're done.
-
 <p align="center"><img src="https://github.com/jpivarski-talks/2024-05-22-hsf-india-tutorial-delhi/assets/1852447/9d8df96b-a463-4702-9e40-c003dc5f8694" width="75%"></p>
 
-Although lesson 1 only has a physics-related problem, lessons 2, 3, and 4 have both a physics problem (all Higgs-hunting) and a non-physics problem. Choose the one that interests you!
+## Option 2: run locally with pixi (recommended)
 
-## Run locally
+Install [pixi](https://pixi.sh/latest/installation/), then:
 
-A conda environment can also be created locally by running
-
+```bash
+git clone https://github.com/henryiii/2026-10-12-hsf-india-tutorial-delhi.git
+cd 2026-10-12-hsf-india-tutorial-delhi
+pixi run start
 ```
+
+This installs everything (including a C++ compiler for lesson 4) and starts JupyterLab.
+
+## Option 3: run locally with conda
+
+Install [Miniforge](https://conda-forge.org/download/), then:
+
+```bash
 conda env create -f environment.yml
+conda activate array-oriented-programming
+dot -c   # registers graphviz plugins, needed once for lesson 4
+jupyter lab
 ```
