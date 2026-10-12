@@ -12,6 +12,12 @@ Lesson 1 only has a physics problem. Lessons 2, 3, and 4 each have a physics pro
 
 Lesson 3 project 1 streams a 611 MB Parquet file from Zenodo, one row group at a time. The other notebooks only use the files in `data/`.
 
+## Option 0: in your browser (no installation)
+
+Open <https://henryiii.github.io/2026-10-12-hsf-india-tutorial-delhi/lab/index.html>. This runs Python in your browser with [Pyodide](https://pyodide.org) and [JupyterLite](https://jupyterlite.readthedocs.io). Packages that Pyodide does not include need `%pip install` first (for example `%pip install vector hist hepunits particle uproot`). Numba, JAX, pybind11, and `dask.distributed` do not work in the browser, so use another option for lesson 4.
+
+To build it locally, run `uvx nox -s pyodide -- serve`.
+
 ## Option 1: JupyterHub (no installation)
 
 Start a JupyterHub session with no GPU:

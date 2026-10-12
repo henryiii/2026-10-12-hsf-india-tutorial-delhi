@@ -9,3 +9,8 @@ mydask.png
 .virtual_documents
 .pixi
 file.parquet
+_content/
+_output/
+.jupyterlite.doit.db
+.nox/
+__pycache__/
