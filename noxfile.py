@@ -16,10 +16,10 @@ def pyodide(session: nox.Session) -> None:
     Build the JupyterLite site into _output. Run with -- serve to serve it.
     """
     session.install(
-        "jupyterlite-core~=0.7.6",
-        "jupyterlab~=4.5.7",
-        "notebook~=7.5.6",
-        "jupyterlite-pyodide-kernel~=0.7.2",
+        "jupyterlite-core~=0.8.6",
+        "jupyterlab~=4.6.4",
+        "notebook~=7.6.3",
+        "jupyterlite-pyodide-kernel~=0.8.6",
     )
 
     # Keep the lesson/data/img layout so "../data" paths work
